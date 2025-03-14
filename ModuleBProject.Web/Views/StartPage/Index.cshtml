@@ -1,0 +1,13 @@
+﻿@model StartPage
+
+<h1 @Html.EditAttributes(m => m.Heading)>
+    @(Model.Heading ?? Model.Name)
+</h1>
+
+<div>
+    @Html.PropertyFor(m => m.MainBody)
+</div>
+<div>
+    @Html.PropertyFor(m => m.MainContentArea,
+            new { CssClass = "row equal-height" })
+</div>
