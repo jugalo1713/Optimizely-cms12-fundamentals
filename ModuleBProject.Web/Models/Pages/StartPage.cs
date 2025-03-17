@@ -1,4 +1,5 @@
 ﻿using ModuleBProject.Web.constants;
+using ModuleBProject.Web.Icons;
 using System.ComponentModel.DataAnnotations;
 
 namespace ModuleBProject.Web.Models.Pages
@@ -9,7 +10,8 @@ namespace ModuleBProject.Web.Models.Pages
         Description = "The home page for a website with an area for blocks and partial pages",
         GroupName = SiteGroupNames.Specialized,
         Order = 10)]
-    public class StartPage : PageData
+    [SiteStartIcon]
+    public class StartPage : SitePageData
     {
         [CultureSpecific]
         [Display(
@@ -34,5 +36,11 @@ namespace ModuleBProject.Web.Models.Pages
         GroupName = SystemTabNames.Content,
         Order = 30)]
         public virtual ContentArea MainContentArea { get; set; }
+
+        [CultureSpecific]
+        [Display(Name = "Footer text",
+            Description = "The footer text will be shown at the bottom of every page.",
+            GroupName = SiteTabNames.SiteSettings, Order = 10)]
+        public virtual string FooterText { get; set; }
     }
 }

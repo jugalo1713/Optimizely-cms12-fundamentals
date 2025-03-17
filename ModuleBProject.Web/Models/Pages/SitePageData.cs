@@ -13,7 +13,7 @@ namespace ModuleBProject.Web.Models.Pages
         [UIHint(UIHint.Textarea)]
         [CultureSpecific]
         [StringLength(60, MinimumLength = 5)]
-        public virtual string MetaTile { get; set; }
+        public virtual string MetaTitle { get; set; }
 
         [Display(
             Name = "Meta Keywords",

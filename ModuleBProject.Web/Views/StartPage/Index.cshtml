@@ -1,13 +1,11 @@
-﻿@model StartPage
+﻿@model PageViewModel<StartPage>
 
-<h1 @Html.EditAttributes(m => m.Heading)>
-    @(Model.Heading ?? Model.Name)
+<h1 @Html.EditAttributes(m => m.CurrentPage.Heading)>
+    @(Model.CurrentPage.Heading ?? Model.CurrentPage.Name)
 </h1>
-
 <div>
-    @Html.PropertyFor(m => m.MainBody)
+    @Html.PropertyFor(m => m.CurrentPage.MainBody)
 </div>
 <div>
-    @Html.PropertyFor(m => m.MainContentArea,
-            new { CssClass = "row equal-height" })
+    @Html.PropertyFor(m => m.CurrentPage.MainContentArea)
 </div>
