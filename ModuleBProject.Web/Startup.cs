@@ -6,6 +6,7 @@ using EPiServer.ServiceLocation;
 using EPiServer.Web;
 using EPiServer.Web.Routing;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using ModuleBProject.Web.constants;
 
 namespace ModuleBProject.Web;
 
@@ -35,6 +36,15 @@ public class Startup
 
         services.TryAddEnumerable(Microsoft.Extensions.DependencyInjection.ServiceDescriptor.Singleton(
         typeof(IFirstRequestInitializer), typeof(AddPagesInitializer)));
+
+        services.Configure<DisplayOptions>(options =>
+        {
+            options.Add(id: SiteTags.Full, name: "Full", tag: SiteTags.Full);
+            options.Add(id: SiteTags.Wide, name: "Wide", tag: SiteTags.Wide);
+            options.Add(id: SiteTags.Narrow, name: "Narrow", tag: SiteTags.Narrow);
+        });
+
+        services.AddDetection();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
