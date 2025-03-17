@@ -11,6 +11,7 @@ namespace ModuleBProject.Web.Models.Pages
         GroupName = SiteGroupNames.Specialized,
         Order = 10)]
     [SiteStartIcon]
+    [AvailableContentTypes(Include = new[] { typeof(StandardPage) })]
     public class StartPage : SitePageData
     {
         [CultureSpecific]

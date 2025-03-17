@@ -1,8 +1,11 @@
+using AlloyTraining.Business.Initializers;
 using EPiServer.Cms.Shell;
 using EPiServer.Cms.UI.AspNetIdentity;
 using EPiServer.Scheduler;
 using EPiServer.ServiceLocation;
+using EPiServer.Web;
 using EPiServer.Web.Routing;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace ModuleBProject.Web;
 
@@ -29,6 +32,9 @@ public class Startup
             .AddCms()
             .AddAdminUserRegistration()
             .AddEmbeddedLocalization<Startup>();
+
+        services.TryAddEnumerable(Microsoft.Extensions.DependencyInjection.ServiceDescriptor.Singleton(
+        typeof(IFirstRequestInitializer), typeof(AddPagesInitializer)));
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
