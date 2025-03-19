@@ -15,16 +15,16 @@ namespace ModuleBProject.Web.Models.Blocks
     public class TeaserBlock: BlockData
     {
         [CultureSpecific]
-        [Display(Name = "Heading", Order = 10)]
+        [Display(Name = "Heading", Order = 10, GroupName = SystemTabNames.PageHeader)]
         public virtual string TeaserHeading { get; set; }
         [CultureSpecific]
         [Display(Name = "Rich text", Order = 20)]
         public virtual XhtmlString TeaserText { get; set; }
-        [Display(Name = "Image", Order = 30)]
+        [Display(Name = "Image", Order = 30, GroupName = SystemTabNames.PageHeader)]
         [UIHint(UIHint.Image)]
         public virtual ContentReference TeaserImage { get; set; }
         [CultureSpecific]
-        [Display(Name = "Link", Order = 40)]
+        [Display(Name = "Link", Order = 40, GroupName = SystemTabNames.PageHeader)]
         public virtual PageReference TeaserLink { get; set; }
     }
 }
