@@ -45,5 +45,12 @@ namespace ModuleBProject.Web.Models.Pages
             GroupName = SystemTabNames.Content,
             Order = 30)]
         public virtual string FooterText { get; set; }
+
+        [Display(Name = "Search page",
+            Description = "If you add a Search page to the site, set this property to reference it to enable search from every page.",
+            GroupName = SiteTabNames.SiteSettings,
+            Order = 40)]
+        [AllowedTypes(typeof(SearchPage))]
+        public virtual PageReference SearchPageLink { get; set; }
     }
 }

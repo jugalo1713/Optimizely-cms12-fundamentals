@@ -1,0 +1,13 @@
+﻿using ModuleBProject.Web.constants;
+using ModuleBProject.Web.Icons;
+
+namespace ModuleBProject.Web.Models.Pages
+{
+    [ContentType(DisplayName = "Search",
+        GroupName = SiteGroupNames.Specialized, Order = 30,
+        Description = "Use this to enable visitors to search for pages and media on the site.")]
+    [SiteSearchIcon]
+    public class SearchPage: StandardPage
+    {
+    }
+}
