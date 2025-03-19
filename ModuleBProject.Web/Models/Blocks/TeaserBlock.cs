@@ -1,0 +1,30 @@
+﻿using EPiServer.Web;
+using ModuleBProject.Web.constants;
+using ModuleBProject.Web.Icons;
+using System.ComponentModel.DataAnnotations;
+
+namespace ModuleBProject.Web.Models.Blocks
+{
+    [ContentType(
+        DisplayName = "Teaser" ,
+        GUID = "{4A0F2DB7-0D76-4218-8E8C-3A053A29D9BE}",
+        Description = "Use this for rich text with heading, image and page link that will be reused in multiple places.",
+        GroupName = SiteGroupNames.Common
+        )]
+    [SiteBlockIcon]
+    public class TeaserBlock: BlockData
+    {
+        [CultureSpecific]
+        [Display(Name = "Heading", Order = 10)]
+        public virtual string TeaserHeading { get; set; }
+        [CultureSpecific]
+        [Display(Name = "Rich text", Order = 20)]
+        public virtual XhtmlString TeaserText { get; set; }
+        [Display(Name = "Image", Order = 30)]
+        [UIHint(UIHint.Image)]
+        public virtual ContentReference TeaserImage { get; set; }
+        [CultureSpecific]
+        [Display(Name = "Link", Order = 40)]
+        public virtual PageReference TeaserLink { get; set; }
+    }
+}

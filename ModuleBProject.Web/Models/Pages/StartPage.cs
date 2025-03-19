@@ -41,8 +41,7 @@ namespace ModuleBProject.Web.Models.Pages
         public virtual ContentArea MainContentArea { get; set; }
 
         [CultureSpecific]
-        [Display(Name = "Main content area",
-            Description = "Drag and drop images, blocks, folders, and pages with partial templates.",
+        [Display(Name = "Footer text",
             GroupName = SystemTabNames.Content,
             Order = 30)]
         public virtual string FooterText { get; set; }
