@@ -1,5 +1,6 @@
 ﻿using ModuleBProject.Web.constants;
 using ModuleBProject.Web.Icons;
+using ModuleBProject.Web.Models.Blocks;
 using System.ComponentModel.DataAnnotations;
 
 namespace ModuleBProject.Web.Models.Pages
@@ -19,5 +20,6 @@ Exclude = new[] { typeof(ProductPage) })]
             GroupName = SystemTabNames.Content,
             Order = 150)]
         public virtual XhtmlString MainBody { get; set; }
+        public virtual EmployeeBlock Author { get; set; }
     }
 }
